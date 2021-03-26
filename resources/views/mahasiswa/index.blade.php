@@ -20,6 +20,7 @@
     <table class="table table-bordered">
         <thead>
             <tr>
+                <th>Nim</th>
                 <th>Nama</th>
                 <th>Kelas</th>
                 <th>Jurusan</th>
