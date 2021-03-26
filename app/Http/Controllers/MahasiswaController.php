@@ -62,7 +62,7 @@ class MahasiswaController extends Controller
     public function show($id)
     {
          //menampilkan detail data dengan menemukan/berdasarkan Nim Mahasiswa
-         $Mahasiswa = Mahasiswa::find($Nim);
+         $Mahasiswa = Mahasiswa::find($id);
          return view('mahasiswa.detail', compact('Mahasiswa')); 
     }
 
@@ -74,7 +74,7 @@ class MahasiswaController extends Controller
      */
     public function edit($id)
     {
-        $Mahasiswa = Mahasiswa::find($Nim);
+        $Mahasiswa = Mahasiswa::find($id);
         return view('mahasiswa.edit', compact('Mahasiswa'));
     }
 
@@ -97,7 +97,7 @@ class MahasiswaController extends Controller
         ]);
 
         // fungsi eloquent untuk mengupdate data inputan kita
-        Mahasiswa::find($Nim)->update($request->all());
+        Mahasiswa::find($id)->update($request->all());
         return redirect()->route('mahasiswa.index')
             ->with('success', 'Mahasiswa Berhasil Diupdate');
     }
@@ -110,7 +110,7 @@ class MahasiswaController extends Controller
      */
     public function destroy($id)
     {
-        Mahasiswa::find($Nim)->delete();
+        Mahasiswa::find($id)->delete();
         return redirect()->route('mahasiswa.index')
             ->with('success', 'Mahasiswa Berhasil Dihapus');
     }
