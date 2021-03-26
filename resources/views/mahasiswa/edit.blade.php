@@ -44,9 +44,19 @@
                                 value="{{ $Mahasiswa->Jurusan }}" aria-describedby="Jurusan">
                         </div>
                         <div class="form-group">
+                            <label for="tanggalLahir">Tanggal Lahir</label>
+                            <input type="tanggalLahir" name="tanggalLahir" class="form-control" id="tanggalLahir"
+                                value="{{ $Mahasiswa->tanggalLahir }}" aria-describedby="tanggalLahir" placeholder="Year-Month-Day">
+                        </div>
+                        <div class="form-group">
                             <label for="No_Handphone">No_Handphone</label>
                             <input type="No_Handphone" name="No_Handphone" class="form-control" id="No_Handphone"
                                 value="{{ $Mahasiswa->No_Handphone }}" aria-describedby="No_Handphone">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" class="form-control" id="email"
+                                value="{{ $Mahasiswa->email }}" aria-describedby="email">
                         </div>
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
