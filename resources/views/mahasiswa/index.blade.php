@@ -57,4 +57,7 @@
             @endforeach
         </tbody>
     </table>
+    <div class="d-flex">
+        {{ $mahasiswa->links() }}
+    </div>
 @endsection
