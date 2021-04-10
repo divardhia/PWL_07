@@ -36,7 +36,7 @@
                         <div class="form-group">
                             <label for="Kelas">Kelas</label>
                             <input type="Kelas" name="Kelas" class="form-control" id="Kelas"
-                                value="{{ $Mahasiswa->Kelas }}" aria-describedby="Kelas">
+                                value="{{ $Mahasiswa->Kelas->nama_kelas }}" aria-describedby="Kelas">
                         </div>
                         <div class="form-group">
                             <label for="Jurusan">Jurusan</label>
