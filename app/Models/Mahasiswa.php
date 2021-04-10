@@ -12,7 +12,6 @@ class Mahasiswa extends Model //Definisi Model
 {
     use HasFactory;
     protected $table = "mahasiswa"; // Eloquent akan membuat model mahasiswa menyimpan record di tabel mahasiswas
-    public $timestamps = false;
     protected $primaryKey = 'Nim'; // Memanggil isi DB Dengan primarykey
     /**
      * The attributes that are mass assignable.
@@ -22,10 +21,11 @@ class Mahasiswa extends Model //Definisi Model
     protected $fillable = [
         'Nim',
         'Nama',
-        'Kelas',
+        'kelas_id',
         'Jurusan',
-        'tanggalLahir',
-        'No_Handphone',
-        'email',
     ];
+
+    public function kelas(){
+        return $this->belongsTo(Kelas::class);
+    }
 }
