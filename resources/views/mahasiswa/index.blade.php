@@ -5,6 +5,7 @@
             <div class="pull-left mt-2">
                 <h2>JURUSAN TEKNOLOGI INFORMASI-POLITEKNIK NEGERI MALANG</h2>
             </div>
+
             <div class="float-left my-4">
                 <form action="/mahasiswa/cari/" method="GET">
                     <div class="input-group">
@@ -15,6 +16,7 @@
                     </div>
                 </form>
             </div>
+            
             <div class="float-right my-2">
                 <a class="btn btn-success" href="{{ route('mahasiswa.create') }}"> Input Mahasiswa</a>
             </div>

@@ -36,7 +36,7 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-         //melakukan validasi data
+         //melakukan valNimasi data
          $request->validate([
             'Nim' => 'required',
             'Nama' => 'required',
@@ -56,25 +56,25 @@ class MahasiswaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $Nim
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($Nim)
     {
          //menampilkan detail data dengan menemukan/berdasarkan Nim Mahasiswa
-         $Mahasiswa = Mahasiswa::find($id);
+         $Mahasiswa = Mahasiswa::find($Nim);
          return view('mahasiswa.detail', compact('Mahasiswa')); 
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  int  $Nim
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($Nim)
     {
-        $Mahasiswa = Mahasiswa::find($id);
+        $Mahasiswa = Mahasiswa::find($Nim);
         return view('mahasiswa.edit', compact('Mahasiswa'));
     }
 
@@ -82,12 +82,12 @@ class MahasiswaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  int  $Nim
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $Nim)
     {
-         // melakukan validasi data
+         // melakukan valNimasi data
          $request->validate([
             'Nim' => 'required',
             'Nama' => 'required',
@@ -99,7 +99,7 @@ class MahasiswaController extends Controller
         ]);
 
         // fungsi eloquent untuk mengupdate data inputan kita
-        Mahasiswa::find($id)->update($request->all());
+        Mahasiswa::find($Nim)->update($request->all());
         return redirect()->route('mahasiswa.index')
             ->with('success', 'Mahasiswa Berhasil Diupdate');
     }
@@ -107,12 +107,12 @@ class MahasiswaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  int  $Nim
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($Nim)
     {
-        Mahasiswa::find($id)->delete();
+        Mahasiswa::find($Nim)->delete();
         return redirect()->route('mahasiswa.index')
             ->with('success', 'Mahasiswa Berhasil Dihapus');
     }
