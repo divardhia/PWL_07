@@ -76,7 +76,8 @@ class MahasiswaController extends Controller
     public function show($Nim)
     {
          //menampilkan detail data dengan menemukan/berdasarkan Nim Mahasiswa
-         $Mahasiswa = Mahasiswa::find($Nim);
+         $Mahasiswa = Mahasiswa::with('kelas')->where('nim', $Nim)->first();
+         
          return view('mahasiswa.detail', compact('Mahasiswa')); 
     }
 
@@ -88,7 +89,8 @@ class MahasiswaController extends Controller
      */
     public function edit($Nim)
     {
-        $Mahasiswa = Mahasiswa::find($Nim);
+        $Mahasiswa = Mahasiswa::with('kelas')->where('nim', $Nim)->first();
+        $kelas = Kelas::all(); //mendapatkan data dari tabel kelas
         return view('mahasiswa.edit', compact('Mahasiswa'));
     }
 
@@ -112,7 +114,7 @@ class MahasiswaController extends Controller
             // 'email' => 'required',
         ]);
 
-        $mahasiswa = Mahasiswa::with('kelas')->where('nim', $Nim);
+        $mahasiswa = Mahasiswa::with('kelas')->where('nim', $Nim)->first();
         $mahasiswa->nim = $request->get('Nim');
         $mahasiswa->nama = $request->get('Nama');
         $mahasiswa->jurusan = $request->get('Jurusan');
