@@ -31,14 +31,18 @@
                         </div>
                         <div class="form-group">
                             <label for="Kelas">Kelas</label>
-                            <input type="Kelas" name="Kelas" class="form-control" id="Kelas" aria-describedby="password">
+                            <select class="form-control">
+                                @foreach ($kelas as $kls)
+                                    <option value="{{$kls->id}}">{{$kls->nama_kelas}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-group">
                             <label for="Jurusan">Jurusan</label>
                             <input type="Jurusan" name="Jurusan" class="form-control" id="Jurusan"
                                 aria-describedby="Jurusan">
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="tanggalLahir">Tanggal Lahir</label>
                             <input type="tanggalLahir" name="tanggalLahir" class="form-control" id="tanggalLahir"
                                 aria-describedby="tanggalLahir" placeholder="Year-Month-Day">
@@ -52,7 +56,7 @@
                             <label for="email">Email</label>
                             <input type="email" name="email" class="form-control" id="email"
                                 aria-describedby="email">
-                        </div>
+                        </div> --}}
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>
