@@ -43,7 +43,7 @@
                             <input type="Jurusan" name="Jurusan" class="form-control" id="Jurusan"
                                 value="{{ $Mahasiswa->Jurusan }}" aria-describedby="Jurusan">
                         </div>
-                        <div class="form-group">
+                        {{-- <div class="form-group">
                             <label for="tanggalLahir">Tanggal Lahir</label>
                             <input type="tanggalLahir" name="tanggalLahir" class="form-control" id="tanggalLahir"
                                 value="{{ $Mahasiswa->tanggalLahir }}" aria-describedby="tanggalLahir" placeholder="Year-Month-Day">
@@ -57,7 +57,7 @@
                             <label for="email">Email</label>
                             <input type="email" name="email" class="form-control" id="email"
                                 value="{{ $Mahasiswa->email }}" aria-describedby="email">
-                        </div>
+                        </div> --}}
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </form>
                 </div>

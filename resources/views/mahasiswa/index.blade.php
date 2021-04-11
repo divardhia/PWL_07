@@ -36,22 +36,16 @@
                 <th>Nama</th>
                 <th>Kelas</th>
                 <th>Jurusan</th>
-                <th>Tanggal Lahir</th>
-                <th>No_Handphone</th>
-                <th>Email</th>
                 <th width="280px">Action</th>
             </tr>
         </thead>
         <tbody>
-            @foreach ($mahasiswa as $Mahasiswa)
+            @foreach ($paginate as $Mahasiswa)
                 <tr>
                     <td>{{ $Mahasiswa->Nim }}</td>
                     <td>{{ $Mahasiswa->Nama }}</td>
                     <td>{{ $Mahasiswa->Kelas->nama_kelas }}</td>
                     <td>{{ $Mahasiswa->Jurusan }}</td>
-                    <td>{{ $Mahasiswa->tanggalLahir }}</td>
-                    <td>{{ $Mahasiswa->No_Handphone }}</td>
-                    <td>{{ $Mahasiswa->email }}</td>
                     <td>
                         <form action="{{ route('mahasiswa.destroy', $Mahasiswa->Nim) }}" method="POST">
 
@@ -70,6 +64,6 @@
         </tbody>
     </table>
     <div class="d-flex">
-        {{ $mahasiswa->links() }}
+        {{ $paginate->links() }}
     </div>
 @endsection
