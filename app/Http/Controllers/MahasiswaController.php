@@ -155,4 +155,10 @@ class MahasiswaController extends Controller
         $mahasiswa->appends($request->only('keyword'));
         return view('mahasiswa.index', compact('mahasiswa'));
     }
+
+    public function nilai($Nim)
+    {
+        $mahasiswa = Mahasiswa::with('kelas', 'matakuliah')->where('Nim',$Nim)->first();
+        return view('mahasiswa.nilai', compact('mahasiswa'));
+    }
 }
