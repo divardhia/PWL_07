@@ -18,17 +18,17 @@ class MataKuliahSeeder extends Seeder
             ['nama_matkul' => 'Pemrograman Berbasis Objek',
                 'sks' => 3,
                 'jam' => 6,
-                'semester' => 4
+                'semester' => 4,
             ],
             ['nama_matkul' => 'Pemrograman Web Lanjut',
                 'sks' => 3,
                 'jam' => 6,
-                'semester' => 4
+                'semester' => 4,
             ],
             ['nama_matkul' => 'Basis Data Lanjut',
                 'sks' => 3,
                 'jam' => 4,
-                'semester' => 4
+                'semester' => 4,
             ],
             ['nama_matkul' => 'Praktikum Basis Data Lanjut',
                 'sks' => 3,

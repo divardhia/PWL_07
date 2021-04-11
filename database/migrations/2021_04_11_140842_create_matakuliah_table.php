@@ -15,7 +15,7 @@ class CreateMatakuliahTable extends Migration
     {
         Schema::create('matakuliah', function (Blueprint $table) {
             $table->id();
-            $table->string('mata_kuliah', 30);
+            $table->string('nama_matkul', 30);
             $table->integer('sks');
             $table->integer('jam');
             $table->string('semester', 25);
